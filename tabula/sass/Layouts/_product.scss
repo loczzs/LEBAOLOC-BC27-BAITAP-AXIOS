@@ -1,0 +1,104 @@
+.blog {
+  position: relative;
+  background-color: white;
+  .blog-img1 {
+    img {
+      width: 100%;
+      // height: 500px;
+    }
+  }
+  .blog-product {
+    //  position: relative;
+    z-index: 10;
+    background-color: #dcd1f3;
+    // margin-bottom: 10px;
+    .container {
+      z-index: 10;
+      padding-top: 30px;
+      // margin-top: 20px;
+      // padding-bottom: 10px;
+      // padding-bottom: 500px;
+      .row {
+        z-index: 10;
+        // margin-top: 20px;
+        margin-bottom: 40px;
+        .col-sm-3 {
+          z-index: 10;
+          padding: 0px 18 px;
+          .item {
+            background-color: white;
+            border-radius: 10px;
+            transition: all 500ms;
+            // box-shadow: 12px 20px 10px 5px black;
+            // box-shadow: 12px 20px 10px 5px rgba(0, 0, 0, 0.266);
+            &:hover {
+                // box-shadow:  black;
+                // box-shadow: 12px 20px 10px 5px rgba(0, 0, 0, 0.266);
+              box-shadow:   0px 20px 10px 5px rgb(0 0 0 / 27%);
+            }
+
+            .thumb {
+                overflow: hidden;
+              img {
+                width: 100%;
+                border-radius: 10px 10px 0 0;
+                transition: all 800ms;
+                &:hover {
+                  transform: scale(1.15, 1.16);
+                }
+              }
+            }
+
+            .text {
+              margin-top: 25px;
+              text-align: center;
+              padding-bottom: 20px;
+              h6 {
+                color: #b61984;
+                font-size: 12px;
+                margin-bottom: 4px;
+              }
+              h3 {
+                font-size: 600;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .blog-image2 {
+    position: absolute;
+    bottom: 0px;
+    // left: 0;
+    z-index: 2;
+    img {
+      // background-color: blue;
+      width: 100%;
+      // height: 500px;
+    }
+  }
+}
+
+
+
+
+@include responsive("large"){
+  .blog .blog-product .container .row .col-sm-3{
+    width: 50% !important;
+  }
+}
+
+@include responsive("medium"){
+  .blog .blog-product .container .row .col-sm-3{
+    width: 50% !important;
+  }
+}
+
+
+@include responsive("small"){
+  .blog .blog-product .container .row .col-sm-3{
+    width: 50% !important;
+  }
+}
+

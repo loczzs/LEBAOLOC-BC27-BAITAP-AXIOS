@@ -1,0 +1,119 @@
+.footer {
+    position: relative;
+  background-color: #aa017e;
+  padding-bottom: 200px;
+  .container {
+    z-index: 10;
+    padding-top: 50px;
+    // background-color: black;
+    .row {
+        z-index: 10;
+      .col-sm-3 {
+        z-index: 10;
+        h3 {
+          color: $color-white-1;
+          margin-bottom: 20px;
+        }
+        p {
+          color: $color-white-1;
+          margin-bottom: 10px;
+          i {
+            margin-right: 5px;
+          }
+        }
+        .foot-icon {
+          margin-top: 25px;
+          color: white;
+          i {
+            margin-right: 15px;
+          }
+        }
+        a {
+          text-decoration: none;
+          color: $color-white-1;
+          &:hover {
+            opacity: 0.5;
+          }
+        }
+        hr {
+          width: 80%;
+          margin-top: 10px;
+          margin-bottom: 10px;
+        }
+        .foot-emai1 {
+          margin-bottom: 5px;
+          width: 90%;
+          //   border: 1px solid #e8e1e1;
+          //   padding: 10px 0px;
+          //   border-radius: 25px;
+          input {
+            color: $color-white-1;
+            background-color: #aa017e;
+            text-align: center;
+            z-index: 10;
+            width: 100%;
+            border: 1px solid #e8e1e1;
+            padding: 10px 0px;
+            border-radius: 25px;
+            border: $color-dark-1 1px solid;
+            &:focus {
+              outline: none;
+              border: $color-white-1 1px solid;
+            }
+          }
+          input::placeholder {
+            color: white !important;
+          }
+         
+        }
+        .foot-email2{
+            button{
+                border: none;
+                width: 90%;
+                @include styleButton($color-white-1,$pd-buttony,$pd-buttonx,
+                $color-white-1,$pd-1,$ls-1,$fs-1,$color-black);
+                cursor: pointer;
+                transition: all 300ms;
+                
+                &:hover{
+                  background-color: $color-purple; //$color-purple
+                  color: $color-white-1;
+                  border: 1px $color-white-1 solid;
+                }
+            }
+        }
+        
+      }
+    }
+  }
+  .foot-back{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    img{
+        width: 100%;
+    }
+  }
+}
+
+
+
+
+
+
+@include responsive("medium"){
+  .footer .container .row .col-sm-3{
+    width: 100% !important;
+  }
+}
+
+
+
+
+
+
+@include responsive("small"){
+  .footer .container .row .col-sm-3{
+    width: 100% !important;
+  }
+}
