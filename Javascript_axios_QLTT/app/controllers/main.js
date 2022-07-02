@@ -262,7 +262,9 @@ function validation() {
   const loaiNgonNgu = document.getElementById("loaiNgonNgu").value;
   const moTa = document.getElementById("MoTa").value;
   const hinhAnh = document.getElementById("HinhAnh").value;
-
+  // const sos =true
+  //  const chEck = findAccount(taiKhoan)
+  //  console.log(chEck)
   // console.log(result)
   var isValid = true;
   // const checkAccountzz = findAccount(teachers, taiKhoan);
@@ -271,7 +273,7 @@ function validation() {
     document.getElementById("sptaiKhoan").style.display = "block";
     document.getElementById("sptaiKhoan").innerHTML =
       "Tên tài khoản không được để trống";
-    // } else if (taiKhoan === checkAccountzz) {
+    // } else if (chEck === taiKhoan) {
     //   isValid = false;
     //   document.getElementById("sptaiKhoan").style.display = "block";
     //   document.getElementById("sptaiKhoan").innerHTML =
@@ -477,23 +479,32 @@ function restform() {
   $("#myModal").modal("hide");
 }
 
-// const sos = () => {
-//   const status = axios({
-//     url: "https://62a694e897b6156bff7bc30e.mockapi.io/api/teachers",
-//     method: "GET",
-//   })
-//     .then(getDataSuccess)
-//     .catch(getDateError);
-//   function getDataSuccess(respone) {
-//     console.log(respone.data);
-//     var teachers = respone.data;
-//     return teachers;
-//   }
-//   function getDateError(error) {
-//     console.log(error);
-//   }
-//   return status
-// };
+
+
+
+
+
+const findAccount = (account) => {
+  const status = axios({
+    url: "https://62a694e897b6156bff7bc30e.mockapi.io/api/teachers",
+    method: "GET",
+  })
+    .then(getDataSuccess)
+    .catch(getDateError);
+  function getDataSuccess(respone) {
+    console.log(respone.data);
+    var teachers = respone.data;
+    for (var i = 0; i <teachers.length;i++ ){
+      if(account === teachers[i].taiKhoan)
+        return teachers[i].taiKhoan
+    }
+    return false
+  }
+  function getDateError(error) {
+    return true
+  }
+  return status
+};
 
 // }
 // const sos = () => {
